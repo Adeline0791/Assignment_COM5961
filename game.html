@@ -85,36 +85,36 @@
 
     <div id="a">
         <div id="rabbit-left">
-            <img src="github.com/Adeline0791/Assignment_COM5961/blob/master/%E5%85%94%E5%87%A0.png>
+            <img src="WechatIMG17408.png" width="100%" height="100%">
         </div>
 
-        <div id=" text-area ">
+        <div id="text-area">
 
 
-            <div id="rule ">
-                <b style="font-size:large ">游戏规则</b>
-                <p style="margin-left: 20px ">猜[0,50)范围内的数字</p>
-                <p style="margin-left: 20px ">点击“提交”，弹窗会告诉你你的猜测数字大了或小了</p>
-                <p style="margin-left: 20px ">根据提示，逐渐接近正确答案！</p>
+            <div id="rule">
+                <b style="font-size:large">游戏规则</b>
+                <p style="margin-left: 20px">猜[0,50)范围内的数字</p>
+                <p style="margin-left: 20px">点击“提交”，弹窗会告诉你你的猜测数字大了或小了</p>
+                <p style="margin-left: 20px">根据提示，逐渐接近正确答案！</p>
             </div>
 
-            <div id="game ">
-                <form action="# " method="get ">
-                    <b style="font-size:large ">猜测的数字</b></br>
-                    <input type="text " id="num " name="num " style="height:21px; margin-top: 5px " /></br>
-                    <input type="button " class="button " onclick="checknum() " value="提交 " />
-                    <input type="button " class="button " onclick="rerandom() " value="重新开始 " />
-                    <button type="button " class="button " onclick="showanswer() ">显示答案</button>
+            <div id="game">
+                <form action="#" method="get">
+                    <b style="font-size:large">猜测的数字</b></br>
+                    <input type="text" id="num" name="num" style="height:21px; margin-top: 5px" /></br>
+                    <input type="button" class="button" onclick="checknum()" value="提交" />
+                    <input type="button" class="button" onclick="rerandom()" value="重新开始" />
+                    <button type="button" class="button" onclick="showanswer()">显示答案</button>
                 </form>
-                <div id="showanswer "><br></div>
-                <div id="SmallGroup "></div>
-                <div id="LargeGroup "></div>
-                <div id="GuessTime "></div>
+                <div id="showanswer"><br></div>
+                <div id="SmallGroup"></div>
+                <div id="LargeGroup"></div>
+                <div id="GuessTime"></div>
             </div>
         </div>
 
-        <div id="rabbit-right ">
-            <img src="github.com/Adeline0791/Assignment_COM5961/blob/master/%E5%85%94%E5%87%A0.png ">
+        <div id="rabbit-right">
+            <img src="WechatIMG17408.png" width="100%" height="100%">
         </div>
     </div>
 
@@ -124,18 +124,44 @@
     var time = 0;
 
     function showanswer() {
-        document.getElementById("showanswer ").innerHTML = "正确答案是 " + randomn;
+        document.getElementById("showanswer").innerHTML = "正确答案是" + randomn;
     }
 
     function rerandom() {
         randomn = parseInt(Math.random() * 50);
         time = 0;
-        document.getElementById("SmallGroup ").innerHTML = " ";
-        document.getElementById("LargeGroup ").innerHTML = " ";
-        document.getElementById("GuessTime ").innerHTML = " ";
-        document.getElementById("showanswer ").innerHTML = "<br>"; } function checknum() { time = time + 1; if (time == 1) { document.getElementById("SmallGroup").innerHTML = "猜小了："; document.getElementById("LargeGroup").innerHTML = "猜大了：";
-            } document.getElementById("GuessTime").innerHTML = "猜测次数：" + time; var a1 = parseInt(document.getElementById("num").value); document.getElementById("num").value = null; if (a1 > randomn) { alert("你猜的数字大啦"); document.getElementById("LargeGroup").innerHTML
-            = document.getElementById("LargeGroup").innerHTML + a1 + " "; } else if (a1
-            < randomn) { alert( "你猜的数字小了"); document.getElementById( "SmallGroup").innerHTML=d ocument.getElementById( "SmallGroup").innerHTML + a1 + " "; } else if (a1==r andomn) { alert( "恭喜你，猜对了！"); } else alert( "请输入[0,50)之间的数字") } </script>
+        document.getElementById("SmallGroup").innerHTML = "";
+        document.getElementById("LargeGroup").innerHTML = "";
+        document.getElementById("GuessTime").innerHTML = "";
+        document.getElementById("showanswer").innerHTML = "<br>";
+    }
+
+    function checknum() {
+        time = time + 1;
+        if (time == 1) {
+            document.getElementById("SmallGroup").innerHTML = "猜小了：";
+            document.getElementById("LargeGroup").innerHTML = "猜大了：";
+        }
+        document.getElementById("GuessTime").innerHTML = "猜测次数：" + time;
+        var a1 = parseInt(document.getElementById("num").value);
+        document.getElementById("num").value = null;
+
+        if (a1 > randomn) {
+
+            alert("你猜的数字大啦");
+            document.getElementById("LargeGroup").innerHTML = document.getElementById("LargeGroup").innerHTML + a1 + " ";
+
+        } else if (a1 < randomn) {
+
+            alert("你猜的数字小了");
+            document.getElementById("SmallGroup").innerHTML = document.getElementById("SmallGroup").innerHTML + a1 + " ";
+
+        } else if (a1 == randomn) {
+
+            alert("恭喜你，猜对了！");
+
+        } else alert("请输入[0,50)之间的数字")
+    }
+</script>
 
 </html>
